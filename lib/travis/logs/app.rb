@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # frozen_string_literal: true
 
 require 'digest/sha1'
@@ -23,7 +24,7 @@ module Travis
 
       configure(:production, :staging) do
         disable :dump_errors
-        use Rack::SSL
+        # use Rack::SSL
         use Travis::Logs::MetricsMiddleware
         use Raven::Rack
         use Travis::Logs::OpenCensus if Travis::Logs::OpenCensus.enabled?
