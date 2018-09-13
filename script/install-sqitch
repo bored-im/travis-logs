@@ -24,4 +24,5 @@ if ! sqitch --version &>/dev/null ; then
 fi
 
 "${BINDIR}/cpanm" --quiet --notest 'DBD::Pg'
+which sqitch
 sqitch --version

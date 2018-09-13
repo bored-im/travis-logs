@@ -18,7 +18,7 @@ RUN bundle install --deployment
 COPY . /usr/src/app
 
 # Sqitch expects partman
-# RUN /usr/src/app/script/install-partman
+RUN /usr/src/app/script/install-partman
 
 # Install sqitch so migrations work
 RUN /usr/src/app/script/install-sqitch
