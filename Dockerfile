@@ -2,7 +2,7 @@ FROM ruby:2.4.1
 
 LABEL maintainer Travis CI GmbH <support+travis-app-docker-images@travis-ci.com>
 
-RUN apt-get update && apt-get upgrade -y --no-install-recommends && apt-get install -y postgresql postgresql-server-dev-9.4 liblocal-lib-perl build-essential
+RUN apt-get update && apt-get upgrade -y --no-install-recommends && apt-get install -y postgresql postgresql-server-dev-9.4 liblocal-lib-perl build-essential cpanminus perl perl-doc
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
@@ -17,10 +17,6 @@ RUN bundle install --deployment
 
 COPY . /usr/src/app
 
-# Sqitch expects partman
-RUN /usr/src/app/script/install-partman
-
-# Install sqitch so migrations work
-RUN /usr/src/app/script/install-sqitch
+RUN cpanm --quiet --notest App::Sqitch
 
 CMD /bin/bash
