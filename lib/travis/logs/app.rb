@@ -23,7 +23,7 @@ module Travis
       helpers Sinatra::Param
 
       configure(:production, :staging) do
-        disable :dump_errors
+        # disable :dump_errors
         # use Rack::SSL
         use Travis::Logs::MetricsMiddleware
         use Raven::Rack
