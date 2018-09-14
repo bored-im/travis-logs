@@ -25,7 +25,7 @@ module Travis
       configure(:production, :staging) do
         # disable :dump_errors
         # use Rack::SSL
-        use Travis::Logs::MetricsMiddleware
+        # use Travis::Logs::MetricsMiddleware
         use Raven::Rack
         use Travis::Logs::OpenCensus if Travis::Logs::OpenCensus.enabled?
       end
