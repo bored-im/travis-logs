@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+`cp /config/travis.yml config/travis.yml`
+
 libdir = File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift(libdir) unless $LOAD_PATH.include?(libdir)
 
@@ -10,8 +12,6 @@ require 'travis/logs'
 Travis.logger.level = ENV['DRAIN_LOG_LEVEL'] if ENV['DRAIN_LOG_LEVEL']
 
 $stdout.sync = true
-
-`cp /config/travis.yml config/travis.yml`
 
 Travis.logger.info('running log parts drain')
 Travis::Logs::Drain.new.run
