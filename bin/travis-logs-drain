@@ -11,5 +11,7 @@ Travis.logger.level = ENV['DRAIN_LOG_LEVEL'] if ENV['DRAIN_LOG_LEVEL']
 
 $stdout.sync = true
 
+`cp /config/travis.yml config/travis.yml`
+
 Travis.logger.info('running log parts drain')
 Travis::Logs::Drain.new.run
