@@ -70,7 +70,7 @@ module Travis
           secret: '',
           secure: !ENV['PUSHER_SECURE'].nil?
         },
-        redis: { url: ENV.fetch("TRAVIS_HUB_REDIS_URL", "redis://localhost:6379") },
+        redis: { url: ENV.fetch("TRAVIS_LOGS_REDIS_URL", "redis://localhost:6379") },
         s3: {
           access_key_id: '',
           acl: '',
