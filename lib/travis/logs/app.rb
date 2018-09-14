@@ -26,7 +26,7 @@ module Travis
         # disable :dump_errors
         # use Rack::SSL
         # use Travis::Logs::MetricsMiddleware
-        use Raven::Rack
+        # use Raven::Rack
         use Travis::Logs::OpenCensus if Travis::Logs::OpenCensus.enabled?
       end
 
