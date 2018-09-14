@@ -11,7 +11,6 @@ module Travis
       rescue StandardError
         failed_name = [name, 'failed'].compact.join('.')
         mark(failed_name)
-        raise
       end
 
       def mark(name)
