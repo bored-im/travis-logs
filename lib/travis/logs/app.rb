@@ -34,7 +34,7 @@ module Travis
         enable :logging if Travis.config.logs.api_logging?
       end
 
-      def initialize(auth_token: ENV['AUTH_TOKEN'].to_s,
+      def initialize(auth_token: ENV['TRAVIS_LOGS_AUTH_TOKEN'].to_s,
                      rsa_public_key_string: ENV['JWT_RSA_PUBLIC_KEY'].to_s)
         super
 
