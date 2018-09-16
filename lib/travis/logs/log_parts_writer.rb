@@ -36,6 +36,7 @@ module Travis
       def run(payload)
         payload = [payload] if payload.is_a?(Hash)
         payload = Array(payload)
+        puts payload
 
         measure do
           create_parts(

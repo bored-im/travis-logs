@@ -24,8 +24,8 @@ module Travis
             max_threads: 20,
             min_threads: 20
           },
-          api_logging: false,
-          archive: true,
+          api_logging: true,
+          archive: false,
           archive_spoofing: {
             min_accepted_id: 0,
             min_accepted_job_id: 0
